@@ -1,36 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import API_KEY from '/config.js';
-import SearchBar from './SearchBar.jsx';
+import NavBar from './NavBar.jsx'
+import DailyWeather from './DailyWeather.jsx';
+import CurrentWeather from './CurrentWeather.jsx';
+import HourlyWeather from './HourlyWeather.jsx';
+
 
 const App = () => {
+  const [weatherByCity, setWeatherByCity] = useState({});
+  const [city, setCity] = useState('Austin');
+  const [cityPlaceHolder, setCityPlaceHolder] = useState('');
+
+  let test = '';
+
+  console.log(weatherByCity)
 
   const getWeatherByCity = (city) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`, {
-      // headers: {
-      //   'Authorization': API_KEY
-      // },
       params: {
-        // apiid: API_KEY,
-        q: 'Austin',
+        q: city,
         units: 'imperial'
       }
     })
-    .then(response => {
-      console.log(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      .then(response => {
+        let lat = response.data.coord.lat
+        let lon = response.data.coord.lon
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${API_KEY}`)
+          .then(response => {
+            setWeatherByCity(response.data);
+          })
+      })
+
+      .catch(error => {
+        console.log(error);
+      })
   }
 
-  getWeatherByCity('Austin');
+  useEffect(() => {
+    getWeatherByCity(city);
+  }, [city])
+
 
   return (
     <div>
-      <h1>Weather Page</h1>
-      <SearchBar />
+      <h1>Weather Lab</h1>
+      <input type="search" onChange={(e) => { setCityPlaceHolder(e.target.value) }}></input>
+      <input type="submit" onClick={(e) => {
+        getWeatherByCity(cityPlaceHolder);
+        setCity(cityPlaceHolder);
+      }}>
+      </input>
+      {weatherByCity.current ? <CurrentWeather current={weatherByCity.current} daily={weatherByCity.daily[0]} city={city}/> : null}
+      {weatherByCity.daily ? <HourlyWeather daily={weatherByCity.daily[0]} city={city}/> : null}
+      <div className="daily-forecast">
+        {weatherByCity.daily ? weatherByCity.daily.map((day, index) => {
+          return <DailyWeather day={day} key={index} />
+        }) : null}
+      </div>
     </div>
   )
 }

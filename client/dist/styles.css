@@ -1,0 +1,120 @@
+body {
+  text-align: center;
+  margin: 0;
+  background-color: rgb(35, 35, 80);
+  color: white;
+  /* background: rgb(239,252,255);
+  background: radial-gradient(circle, rgba(239,252,255,1) 1%, rgba(210,246,255,1) 47%, rgba(216,249,255,1) 91%, rgba(239,252,255,1) 100%); */
+  background-image: url('https://image.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+.current-weather-container {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  /* border: 1px solid rgba(255, 255, 255, 0.479); */
+  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.45);
+  margin: 20px auto;
+  border-radius: 7px;
+  letter-spacing: 0.04em;
+  background: rgb(90,163,231);
+background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+
+}
+
+.current-weather-container h1 {
+  font-size: 90px;
+  font-weight: 500;
+
+}
+
+.as-of {
+  color: rgba(80, 80, 80, 0.589);
+}
+
+.current-weather-image {
+  margin-right: 50px;
+}
+
+.current-weather-image img{
+  width: 120px;
+  height: 120px;
+}
+
+.current-weather-temp {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 20px;
+}
+
+.daily-forecast {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.day-tile {
+  padding: 30px 10px;
+  background: rgb(90,163,231);
+  background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  color: white;
+  border-radius: 7px;
+  width: 21%;
+  /* border: 1px solid rgba(255, 255, 255, 0.603); */
+  margin: 10px;
+  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.555);
+}
+
+.day-tile img {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px
+}
+
+
+.day-tile h3, .day-tile h4{
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.hourly-temps-container {
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.45);
+  background: rgb(90,163,231);
+  background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  border-radius: 7px;
+}
+
+.hourly-temps {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.morning, .afternoon, .evening, .night {
+  padding: 20px
+}
+
+.morning, .afternoon, .evening{
+  padding-right: 40px;
+  border-right: 1px solid rgb(201, 201, 201);
+}
+
+
+.hourly-temps img {
+  width: 50px;
+  height: 50px;
+}
