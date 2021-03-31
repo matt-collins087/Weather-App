@@ -12,15 +12,12 @@ const App = () => {
   const [weatherByCity, setWeatherByCity] = useState({});
   const [city, setCity] = useState('Austin');
   const [cityPlaceHolder, setCityPlaceHolder] = useState('');
+  const [stateCode, setStateCode] = useState('Texas');
 
-  let test = '';
-
-  console.log(weatherByCity)
-
-  const getWeatherByCity = (city) => {
+  const getWeatherByCity = (city, stateCode) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`, {
       params: {
-        q: city,
+        q: `${city},${stateCode}`,
         units: 'imperial'
       }
     })
@@ -39,21 +36,29 @@ const App = () => {
   }
 
   useEffect(() => {
-    getWeatherByCity(city);
-  }, [city])
+    getWeatherByCity(city, stateCode);
+  }, [city, stateCode])
 
 
   return (
     <div>
-      <h1>Weather Lab</h1>
-      <input type="search" onChange={(e) => { setCityPlaceHolder(e.target.value) }}></input>
-      <input type="submit" onClick={(e) => {
-        getWeatherByCity(cityPlaceHolder);
-        setCity(cityPlaceHolder);
-      }}>
-      </input>
-      {weatherByCity.current ? <CurrentWeather current={weatherByCity.current} daily={weatherByCity.daily[0]} city={city}/> : null}
-      {weatherByCity.daily ? <HourlyWeather daily={weatherByCity.daily[0]} city={city}/> : null}
+      <NavBar
+        setCity={setCity}
+        setCityPlaceHolder={setCityPlaceHolder}
+        getWeatherByCity={getWeatherByCity}
+        cityPlaceHolder={cityPlaceHolder}
+        setStateCode={setStateCode}
+        city={city}
+        stateCode={stateCode}
+      />
+      {weatherByCity.current ? <CurrentWeather
+        current={weatherByCity.current}
+        daily={weatherByCity.daily[0]}
+        city={city}
+        stateCode={stateCode}
+        />
+        : null}
+      {weatherByCity.daily ? <HourlyWeather daily={weatherByCity.daily[0]} city={city} /> : null}
       <div className="daily-forecast">
         {weatherByCity.daily ? weatherByCity.daily.map((day, index) => {
           return <DailyWeather day={day} key={index} />

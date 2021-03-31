@@ -5,7 +5,7 @@ import moment from 'moment';
 const HourlyWeather = ({ daily, city }) => {
   return (
     <div className="hourly-temps-container">
-      <h2>Today's forecast in {city}</h2>
+      <h2 className="hourly-temps-h2">Today's forecast in {city}</h2>
       <div className="hourly-temps">
         <div className="morning">
           <h3>Morning</h3>

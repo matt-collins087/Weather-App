@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
 body {
   text-align: center;
   margin: 0;
   background-color: rgb(35, 35, 80);
   color: white;
-  /* background: rgb(239,252,255);
-  background: radial-gradient(circle, rgba(239,252,255,1) 1%, rgba(210,246,255,1) 47%, rgba(216,249,255,1) 91%, rgba(239,252,255,1) 100%); */
   background-image: url('https://image.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,6 +15,67 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
+
+.nav-bar {
+  background-color: rgb(55, 141, 221);
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-bar img {
+  width: 45px;
+  height: 45px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon h3 {
+  font-size: 22px;
+  font-family: 'Rock Salt', cursive;
+  margin-left: 15px;
+  color: rgba(0, 0, 0, 0.719);
+}
+
+.search-bar-container {
+  position: relative;
+  bottom: 8px;
+  right: 50px;
+}
+
+.search-bar {
+  width: 300px;
+  height: 35px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: rgb(137, 189, 238);
+  border: none;
+}
+
+.search-submit {
+  height: 45px;
+  width: 45px;
+  position: relative;
+  top: 15px;
+  background-image: url('/Users/mattix/Desktop/HRATX/MVP/Weather-App/client/dist/images/search.png');
+  background-color: rgb(55, 141, 221);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  border-radius: 50px;
+  border: none;
+}
+
+.search-submit:hover {
+  cursor: pointer;
+}
+
 .current-weather-container {
   font-size: 20px;
   display: flex;
@@ -34,11 +95,14 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 .current-weather-container h1 {
   font-size: 90px;
   font-weight: 500;
+}
 
+.current-weather-city {
+  font-size: 24px;
 }
 
 .as-of {
-  color: rgba(80, 80, 80, 0.589);
+  color: rgba(214, 214, 214, 0.589);
 }
 
 .current-weather-image {
@@ -48,6 +112,7 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 .current-weather-image img{
   width: 120px;
   height: 120px;
+  margin-bottom: 13px;
 }
 
 .current-weather-temp {
@@ -108,11 +173,15 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
   padding: 20px
 }
 
-.morning, .afternoon, .evening{
-  padding-right: 40px;
-  border-right: 1px solid rgb(201, 201, 201);
+.hourly-temps-h2 {
+  border-bottom: 1px solid rgba(164,196,234,1);
+  padding: 5px 0;
 }
 
+.morning, .afternoon, .evening{
+  padding-right: 40px;
+  border-right: 1px solid rgba(164,196,234,1);
+}
 
 .hourly-temps img {
   width: 50px;

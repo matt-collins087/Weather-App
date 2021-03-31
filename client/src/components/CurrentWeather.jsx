@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 
-const CurrentWeather = ({ current, city, daily }) => {
+const CurrentWeather = ({ current, city, stateCode, daily }) => {
   return (
     <div className="current-weather-container">
       <div className="current-weather-temp">
-        <h4>{city} Weather</h4>
+        <h4 className="current-weather-city">{city}, {stateCode} Weather</h4>
         <h4 className="as-of">as of {moment.unix(current.dt).format("h:mma")}</h4>
         <h1>{Math.round(current.temp)}&#xb0;</h1>
         <h4>{current.weather[0].description}</h4>
