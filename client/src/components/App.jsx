@@ -6,25 +6,28 @@ import NavBar from './NavBar.jsx'
 import DailyWeather from './DailyWeather.jsx';
 import CurrentWeather from './CurrentWeather.jsx';
 import HourlyWeather from './HourlyWeather.jsx';
+import TopStories from './TopStories.jsx';
 
 
 const App = () => {
   const [weatherByCity, setWeatherByCity] = useState({});
   const [city, setCity] = useState('Austin');
+  const [units, setUnits] = useState('imperial');
   const [cityPlaceHolder, setCityPlaceHolder] = useState('');
   const [stateCode, setStateCode] = useState('Texas');
+  console.log(weatherByCity);
 
-  const getWeatherByCity = (city, stateCode) => {
+  const getWeatherByCity = (city, units) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`, {
       params: {
-        q: `${city},${stateCode}`,
-        units: 'imperial'
+        q: city,
+        units: units
       }
     })
       .then(response => {
         let lat = response.data.coord.lat
         let lon = response.data.coord.lon
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${API_KEY}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&exclude=minutely&appid=${API_KEY}`)
           .then(response => {
             setWeatherByCity(response.data);
           })
@@ -36,8 +39,8 @@ const App = () => {
   }
 
   useEffect(() => {
-    getWeatherByCity(city, stateCode);
-  }, [city, stateCode])
+    getWeatherByCity(city, units);
+  }, [city, units])
 
 
   return (
@@ -50,6 +53,8 @@ const App = () => {
         setStateCode={setStateCode}
         city={city}
         stateCode={stateCode}
+        setUnits={setUnits}
+        units={units}
       />
       {weatherByCity.current ? <CurrentWeather
         current={weatherByCity.current}
@@ -58,12 +63,14 @@ const App = () => {
         stateCode={stateCode}
         />
         : null}
-      {weatherByCity.daily ? <HourlyWeather daily={weatherByCity.daily[0]} city={city} /> : null}
+      {weatherByCity.daily ? <HourlyWeather current={weatherByCity.current} daily={weatherByCity.daily[0]} city={city} /> : null}
+        <h1 className="eight-day-forecast">8 Day Forecast</h1>
       <div className="daily-forecast">
         {weatherByCity.daily ? weatherByCity.daily.map((day, index) => {
           return <DailyWeather day={day} key={index} />
         }) : null}
       </div>
+        <TopStories />
     </div>
   )
 }

@@ -9,7 +9,29 @@
 <body>
   <div id="app"></div>
   <script type="text/javascript" src="bundle.js"></script>
-  
+  <script>
+    let autocomplete;
+    function initAutocomplete() {
+      autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('autocomplete'),
+        {
+          types: ['geocode'],
+          componentRestrictions: { 'country': 'us' },
+          fields: ['name']
+        });
+        autocomplete.addListener('place_changed', onPlaceChanged);
+      }
+      function onPlaceChanged() {
+        let place = autocomplete.getPlace();
+        let search = document.getElementById('autocomplete');
+        console.log(place.name);
+        search.value = place.name;
+      }
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM3PJT6dRXWR-Aa8CuWRbCvwnvcd51Njc&libraries=places&callback=initAutocomplete"
+    aysnc defer>
+    </script>
 </body>
 
 </html>
