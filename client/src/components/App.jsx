@@ -45,6 +45,9 @@ const App = () => {
 
   return (
     <div>
+      <div class="flier">
+        <img className="rocket" src="/Users/mattix/Desktop/HRATX/MVP/Weather-App/client/dist/images/ufo.png"></img>
+      </div>
       <NavBar
         setCity={setCity}
         setCityPlaceHolder={setCityPlaceHolder}
@@ -63,6 +66,7 @@ const App = () => {
         stateCode={stateCode}
         />
         : null}
+
       {weatherByCity.daily ? <HourlyWeather current={weatherByCity.current} daily={weatherByCity.daily[0]} city={city} /> : null}
         <h1 className="eight-day-forecast">8 Day Forecast</h1>
       <div className="daily-forecast">

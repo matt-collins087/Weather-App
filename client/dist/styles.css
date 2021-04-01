@@ -7,7 +7,7 @@ body {
   margin: 0;
   background-color: rgb(35, 35, 80);
   color: white;
-  background-image: url('https://image.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg');
+  background-image: url('https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?cs=srgb&dl=pexels-pixabay-76969.jpg&fm=jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-bar {
-  background-color: rgb(55, 141, 221);
+  background-color: rgb(22, 22, 22);
   height: 80px;
   display: flex;
   justify-content: space-around;
@@ -28,8 +28,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-bar img {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
 }
 
 .icon {
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5 {
   font-size: 22px;
   font-family: 'Rock Salt', cursive;
   margin-left: 15px;
-  color: rgba(0, 0, 0, 0.719);
+  color: white;
 }
 
 .search-bar-container {
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5 {
   font-size: 20px;
   text-align: center;
   border-radius: 25px;
-  background-color: rgb(137, 189, 238);
+  background-color: white;
   border: none;
 }
 
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   top: 15px;
   background-image: url('/Users/mattix/Desktop/HRATX/MVP/Weather-App/client/dist/images/search.png');
-  background-color: rgb(55, 141, 221);
+  background-color: rgb(22, 22, 22);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -79,14 +79,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .drop-down select {
-  margin-left: 10px;
-  font-size: 22px;
+  margin-left: 15px;
+  font-size: 26px;
   position: relative;
-  bottom: 10px;
+  bottom: 8px;
   border: none;
-  color: rgb(226, 241, 255);
+  color: white;
   padding: 2px;
-  background-color: rgb(55, 141, 221);
+  background-color: rgb(22, 22, 22);
 }
 
 .current-weather-container {
@@ -95,12 +95,12 @@ h1, h2, h3, h4, h5 {
   justify-content: space-between;
   align-items: center;
   width: 45%;
-  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.45);
-  margin: 20px auto;
+  box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.863);
+  margin: 40px auto;
   border-radius: 7px;
   letter-spacing: 0.04em;
-  background: rgb(90,163,231);
-background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  background: rgb(9,8,13);
+  background: linear-gradient(180deg, rgba(14, 13, 13, 0.905) 3%, rgba(63,99,148,1) 16%, rgba(88,92,101,1) 92%);
 
 }
 
@@ -148,7 +148,9 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 }
 
 .eight-day-forecast {
-  margin-top: 25px;
+  margin-top: 30px;
+  text-decoration: underline;
+  font-size: 35px;
 }
 
 .daily-forecast {
@@ -161,13 +163,13 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 
 .day-tile {
   padding: 30px 10px;
-  background: rgb(90,163,231);
-  background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  background: rgb(9,8,13);
+  background: linear-gradient(180deg, rgba(9, 8, 13, 0.89) 0%, rgba(63,99,148,1) 16%, rgba(88,92,101,1) 92%);
   color: white;
   border-radius: 7px;
   width: 21%;
   margin: 10px;
-  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.555);
+  box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.863);
 }
 
 .day-tile img {
@@ -184,9 +186,9 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 .hourly-temps-container {
   width: 45%;
   margin: 0 auto;
-  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.45);
-  background: rgb(90,163,231);
-  background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.863);
+  background: rgb(9,8,13);
+  background: linear-gradient(180deg, rgba(9,8,13,1) 0%, rgba(63,99,148,1) 17%, rgba(88,92,101,1) 100%);
   border-radius: 7px;
 }
 
@@ -219,10 +221,10 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
   width: 50%;
   margin: 20px auto 60px auto;
   padding-top: 20px;
-  box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.45);
+  box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.863);
   border-radius: 8px;
-  background: rgb(90,163,231);
-  background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 100%);
+  background: rgb(9,8,13);
+  background: linear-gradient(180deg, rgba(9,8,13,1) 0%, rgba(63,99,148,1) 17%, rgba(88,92,101,1) 100%);
 }
 
 
@@ -250,9 +252,70 @@ background: linear-gradient(150deg, rgba(90,163,231,1) 55%, rgba(164,196,234,1) 
 
 .story-container a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .story-container a:hover {
   color: rgb(0, 81, 255);
+}
+
+.pac-container {
+  border-radius: 10px;
+}
+
+.pac-item-query {
+  font-size: 17px;
+  padding: 5px;
+}
+
+.rocket {
+  width: 50px;
+  height: 50px
+}
+
+.flier > * {
+  /* Adjust animation duration to change the element’s speed */
+    animation: fly 50s linear infinite;
+    pointer-events: none !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    animation-delay: 1s;
+    z-index: 999999;
+}
+@keyframes fly {
+
+	98.001%, 0% {
+                display: block;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(0deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(0deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(0deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(0deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
 }

@@ -16,7 +16,7 @@ const NavBar = ({ setCityPlaceHolder, setCity, getWeatherByCity, cityPlaceHolder
   return (
     <div className="nav-bar">
       <div className="icon">
-        <img src="/Users/mattix/Desktop/HRATX/MVP/Weather-App/client/dist/images/weatherlab.png"></img>
+        <img src="/Users/mattix/Desktop/HRATX/MVP/Weather-App/client/dist/images/logo.png"></img>
         <h3>Weather Lab</h3>
       </div>
       <div className="search-bar-container">
